@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Handlebar JS</title>
+  <title>Etsy Recreation</title>
 </head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <body>
 
-  <div class="container"></div>
+  <div class="row container"></div>
 
 
   <script id="student-template" type="text/x-handlebars-template">
@@ -17,10 +18,19 @@
 
   <script id="shoe-template" type="text/x-handlebars-template">
     {{#each shoes}}
-      <h2>{{title}}</h2>
-      <p>{{description}}</p>
+    <div class="col-3 card" style="width: 18rem;">
+      {{#each Images}}
+    <img src="{{url_170x135}}" class="card-img-top" alt="Images">
+      {{/each}}
+    <div class="card-body">
+      <h5 class="card-title">{{title}}</h5>
+      <p class="card-text">{{condense description}}...</p>
+      <a href="{{url}}" class="btn btn-primary">See Website</a>
+    </div>
+  </div>
     {{/each}}
   </script>
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
