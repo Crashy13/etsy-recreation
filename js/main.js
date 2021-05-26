@@ -14,6 +14,10 @@
   //
   // document.querySelector('.container').innerHTML = html;
 
+  Handlebars.registerHelper('condense', function(shoes) {
+    return shoes.slice(0, 100)
+  })
+
   const source = document.querySelector('#shoe-template').innerHTML;
   const template = Handlebars.compile(source);
   const context = {
